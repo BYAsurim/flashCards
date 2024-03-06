@@ -25,7 +25,11 @@ export function App() {
         errorMessage={''}
         inputType={'password'}
         label={'Input'}
-        onChange={fooTextField}
+        onChange={e => {
+          if (typeof e === 'string') {
+            fooTextField(e)
+          }
+        }}
         placeholder={'Input'}
         value={textFieldvalue}
       />
