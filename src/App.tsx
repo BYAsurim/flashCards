@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { Button } from '@/components/ui/button/Button'
 import { Checkbox } from '@/components/ui/checkbox/Checkbox'
+import { RadioGroup } from '@/components/ui/radioGroup/RadioGroup'
 import { TextField } from '@/components/ui/textField/TextField'
 
 export function App() {
@@ -13,6 +14,10 @@ export function App() {
   const fooTextField = (value: string) => {
     setTextFieldvalue(value)
   }
+  const options = [
+    { label: 'hello', value: '1' },
+    { label: '2', value: '2' },
+  ]
 
   return (
     <div style={{ display: 'flex', gap: '20px', marginTop: '50px' }}>
@@ -33,6 +38,7 @@ export function App() {
         placeholder={'Input'}
         value={textFieldvalue}
       />
+      <RadioGroup options={options} />
     </div>
   )
 }
